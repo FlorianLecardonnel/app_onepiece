@@ -1,113 +1,120 @@
-import Image from "next/image";
+// app/page.tsx
+import React from "react";
+import "./styles/reset.css";
+import "./styles/globals.css";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const HomePage: React.FC = () => {
+    return (
+        <main className="container">
+            <section id="home" className="section">
+                <p>
+                    "One Piece" est bien plus qu'une simple histoire de pirates
+                    à la recherche d'un trésor. C'est une épopée riche en
+                    émotions, en aventures et en leçons de vie. À travers ses
+                    personnages inoubliables et ses thèmes universels, Eiichiro
+                    Oda a créé une œuvre qui continue de captiver et d'inspirer
+                    des millions de personnes à travers le monde.
+                </p>
+                <div id="home-container"></div>
+            </section>
+            <section className="section">
+                <h2>Un Équipage Héroïque</h2>
+                <img
+                    src="/images/fondecranOP.jpeg"
+                    alt="L'équipage au chapeau de paille"
+                />
+                <div className="paragraphe">
+                    <p>
+                        Monkey D. Luffy reconnaissable avec son chapeau de
+                        paille est un jeune homme audacieux, au corps élastique
+                        grâce au pouvoir du fruit du démon, rêve de trouver le
+                        One Piece et de devenir le Roi des Pirates. Son
+                        insatiable soif de liberté et sa détermination sans
+                        faille l'entraînent dans une aventure incroyable à
+                        travers les mers.
+                    </p>
+                </div>
+                <div className="paragraphe">
+                    <p>
+                        Rejoignez le capitaine Luffy et son équipage coloré, les
+                        Pirates du Chapeau de Paille, composé de personnages
+                        charismatiques comme Zoro le bretteur, Nami la
+                        navigatrice, Usopp le tireur d'élite, Sanji le
+                        cuisinier, Chopper le médecin, Robin l'archéologue,
+                        Franky le charpentier, Brook le musicien et Jinbe le
+                        timonier. Ensemble, ils affrontent des ennemis
+                        redoutables, découvrent des îles mystérieuses et forment
+                        des alliances improbables.
+                    </p>
+                </div>
+            </section>
+            <section className="section">
+                <h2>Pourquoi One Piece ?</h2>
+                <div className="paragraphe">
+                    <p>
+                        Une Odyssée Inoubliable One Piece n'est pas seulement
+                        une histoire de pirates; c'est une odyssée épique
+                        remplie de mystères, d'émotions et de rebondissements
+                        inattendus. Chaque arc narratif est une aventure unique
+                        qui explore des thèmes universels comme l'amitié, la
+                        liberté, le sacrifice et le rêve.
+                    </p>
+                </div>
+                <div className="paragraphe">
+                    <p>
+                        L'univers de One Piece est immense et détaillé, avec une
+                        myriade d'îles exotiques, de créatures fantastiques et
+                        de cultures diverses. Chaque nouvelle destination
+                        apporte son lot de surprises et de dangers, rendant
+                        chaque chapitre plus excitant que le précédent.
+                    </p>
+                </div>
+                <div className="paragraphe">
+                    <p>
+                        Les personnages de One Piece sont profondément
+                        développés et attachants. Chaque membre de l'équipage a
+                        ses propres rêves, motivations et histoires, créant une
+                        dynamique de groupe riche et complexe.
+                    </p>
+                </div>
+            </section>
+            <section id="homeaventure" className="section">
+                <h2>Rejoignez l'Aventure</h2>
+                <img
+                    src="/images/banniereOP.jpg"
+                    alt="L'équipage au chapeau de paille heureux pleins d'or"
+                />
+                <div className="paragraphe">
+                    <p>
+                        Commencez le voyage avec nous que vous soyez un nouveau
+                        lecteur curieux ou un fan de longue date, notre page
+                        d'accueil est votre portail vers le monde extraordinaire
+                        de One Piece. Retrouvez les derniers chapitres, les
+                        analyses détaillées, les discussions entre fans, et bien
+                        plus encore.
+                    </p>
+                </div>
+                <div className="paragraphe">
+                    <p>
+                        Partagez votre passion engagez-vous avec la communauté
+                        mondiale de One Piece! Partagez vos théories, participez
+                        aux débats, et découvrez les fan-arts et les cosplays
+                        inspirés par vos personnages préférés.
+                    </p>
+                </div>
+                <div className="paragraphe">
+                    <p>
+                        Préparez-vous à lever l'ancre et à naviguer vers des
+                        horizons inexplorés avec Luffy et les Pirates du Chapeau
+                        de Paille. L'aventure vous attend!
+                    </p>
+                </div>
+                <div className="paragrapheunivers">
+                    <h2>Bienvenue dans l'univers de One Piece!</h2>
+                </div>
+            </section>
+        </main>
+    );
+};
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+export default HomePage;
