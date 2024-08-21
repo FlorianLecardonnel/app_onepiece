@@ -1,22 +1,19 @@
+//app/components/NavBar.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
-    const [token, setToken] = useState<string | null>(null);
+    const { data: session, status } = useSession();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
-    useEffect(() => {
-        // Initial check on load
-        setToken(localStorage.getItem("token"));
-    }, []);
-
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        setToken(null);
+    const handleLogout = async () => {
+        await signOut();
         setIsMenuOpen(false); // Close the menu on logout
     };
 
@@ -35,7 +32,15 @@ const Navbar: React.FC = () => {
     return (
         <header className="container">
             <Link href="/">
-                <img src="/images/logo-onepiece.png" alt="Logo One Piece" />
+                <div className="logo-container">
+                    <Image
+                        src="/images/logo-onepiece.png"
+                        alt="Logo One Piece"
+                        width={150}
+                        height={50}
+                        priority
+                    />
+                </div>
             </Link>
             <h1>The One Piece</h1>
             <button
@@ -46,27 +51,59 @@ const Navbar: React.FC = () => {
                 &#9776;
             </button>
             <nav>
-                <ul className={isMenuOpen ? 'show' : ''}>
+                <ul className={isMenuOpen ? "show" : ""}>
                     <li>
-                        <Link href="/" onClick={handleLinkClick}>Accueil</Link>
-                    </li>
-                    <li>
-                        <Link href="/characters" onClick={handleLinkClick}>Personnages</Link>
-                    </li>
-                    <li>
-                        <Link href="/arcs" onClick={handleLinkClick}>Arcs narratifs</Link>
+                        <Link href="/" onClick={handleLinkClick}>
+                            Accueil
+                        </Link>
                     </li>
                     <li>
-                        <Link href="/blog" onClick={handleLinkClick}>Blog</Link>
+                        <Link href="/characters" onClick={handleLinkClick}>
+                            Personnages
+                        </Link>
                     </li>
                     <li>
-                        <Link href="/contact" onClick={handleLinkClick}>Contact</Link>
+                        <Link href="/arcs" onClick={handleLinkClick}>
+                            Arcs narratifs
+                        </Link>
                     </li>
-                    <li className={`connexion ${token ? "hidden" : ""}`}>
-                        <Link href="/signup" onClick={handleLinkClick}>Connexion</Link>
+                    <li>
+                        <Link href="/articles" onClick={handleLinkClick}>
+                            Blog
+                        </Link>
                     </li>
-                    <li className={`deconnexion ${token ? "" : "hidden"}`}>
-                        <a href="/" onClick={handleLogout}>Déconnexion</a>
+                    {status === "authenticated" ? (
+                        <>
+                            <li>
+                                <Link href="/profile" onClick={handleLinkClick}>
+                                    Profil
+                                </Link>
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li>
+                                <Link
+                                    href="/auth/signin"
+                                    onClick={handleLinkClick}
+                                >
+                                    Connexion
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/auth/signup"
+                                    onClick={handleLinkClick}
+                                >
+                                    Inscription
+                                </Link>
+                            </li>
+                        </>
+                    )}
+                    <li>
+                        <Link href="/contact" onClick={handleLinkClick}>
+                            Contact
+                        </Link>
                     </li>
                 </ul>
             </nav>

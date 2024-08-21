@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const CharactersPage: React.FC = () => {
     const [characters, setCharacters] = useState<any[]>([]);
@@ -72,12 +73,14 @@ const CharactersPage: React.FC = () => {
                         characters.map((character: any) => (
                             <div className="character" key={character.id}>
                                 <h2>{character.name || "Nom inconnu"}</h2>
-                                <img
+                                <Image
                                     src={
                                         characterImages[character.name] ||
                                         "/images/default.jpg"
                                     }
                                     alt={character.name || "Image par défaut"}
+                                    width={300}
+                                    height={200}
                                 />
                                 <p>
                                     <strong>Métier :</strong>{" "}
@@ -100,7 +103,7 @@ const CharactersPage: React.FC = () => {
                                     {character.crew?.name || "Inconnu"}
                                 </p>
                                 <p>
-                                    <strong>Statut de l'équipage :</strong>{" "}
+                                    <strong>Statut de l&apos;équipage :</strong>{" "}
                                     {character.crew?.status || "Inconnu"}
                                 </p>
                                 <p>
@@ -109,7 +112,7 @@ const CharactersPage: React.FC = () => {
                                 </p>
                                 <p>
                                     <strong>
-                                        Prime totale de l'équipage :
+                                        Prime totale de l&apos;équipage :
                                     </strong>{" "}
                                     {character.crew?.total_prime || "Inconnu"}
                                 </p>

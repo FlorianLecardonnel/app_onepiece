@@ -1,19 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
-body {
-    font-family: "Crushed", sans-serif; /* Assurez-vous que le nom correspond à la police importée */
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Kulim Park", sans-serif; /* Assurez-vous que le nom correspond à la police importée */
-}
+@tailwind utilities; */
 
 body {
     font-family: "Kulim Park", sans-serif;
@@ -21,6 +8,13 @@ body {
     background: #f2f2f2 url("/images/mer1.jpeg") center center / cover no-repeat
         fixed;
     margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Crushed", serif;
+    font-weight: bold;
 }
 
 header {
@@ -39,7 +33,6 @@ header img {
 }
 
 header h1 {
-    font-family: "Crushed", sans-serif;
     font-size: 2.5em;
     text-align: center;
     flex-grow: 1;
@@ -61,7 +54,6 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: "Crushed", sans-serif;
     color: #fff;
     text-decoration: none;
     padding: 5px 10px;
@@ -95,7 +87,6 @@ main.container {
 
 footer {
     font-size: 1.1em;
-    font-family: "Kulim Park", sans-serif;
     background-color: #3671b3;
     color: #fff;
     text-align: center;
@@ -113,11 +104,6 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.section h1,
-.section h2 {
-    font-family: "Crushed", sans-serif;
-}
-
 .section h1 {
     font-size: 2.5em;
     text-align: center;
@@ -130,7 +116,6 @@ footer {
 
 .section p,
 .section ul li {
-    font-family: "Kulim Park", sans-serif;
     font-size: 1.1em;
     color: #333;
 }
@@ -155,7 +140,23 @@ footer {
 }
 
 .container {
+    text-align: center;
     max-width: 100%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+}
+
+.container h1 {
+    font-size: 2.4em;
 }
 
 .container h2 {
@@ -208,14 +209,12 @@ footer {
 
 .character h2,
 .arc h2 {
-    font-family: "Crushed", sans-serif;
     font-size: 1.5em;
     margin: 10px 0;
 }
 
 .character p,
 .arc p {
-    font-family: "Kulim Park", sans-serif;
     font-size: 1.1em;
     color: #555;
     margin: 10px 0;
@@ -349,7 +348,6 @@ form .radio-group label {
 }
 
 .article p {
-    font-family: "Kulim Park", sans-serif;
     font-size: 1.1em;
     color: #333;
 }
@@ -476,26 +474,23 @@ form .radio-group label {
 }
 
 /* Styles pour les formulaires de connexion et d'inscription */
-.connexion,
-.inscription {
-    background-color: #f9f9f9; /* Couleur de fond claire pour les sections */
+.formulairelog {
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    margin: 20px auto;
+    margin: 0 auto;
     text-align: center;
 }
 
-.connexion form,
-.inscription form {
+.formulairelog form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.connexion input,
-.inscription input {
+.formulairelog input {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -504,8 +499,7 @@ form .radio-group label {
     background-color: #ffffff;
 }
 
-.connexion button,
-.inscription button {
+.formulairelog button {
     background-color: #3671b3;
     color: #fff;
     padding: 15px;
@@ -516,35 +510,29 @@ form .radio-group label {
     transition: background-color 0.3s;
 }
 
-.connexion button:hover,
-.inscription button:hover {
+.formulairelog button:hover {
     background-color: #0f287d;
 }
 
-.connexion,
-.inscription h2 {
-    font-size: 1.8em;
+.formulairelog label {
+    font-size: 1.2em;
 }
 /* Ajustement pour les champs de formulaire en version mobile */
 @media (max-width: 768px) {
-    .connexion,
-    .inscription {
+    .formulairelog {
         padding: 20px;
     }
 
-    .connexion input,
-    .inscription input {
+    .formulairelog input {
         font-size: 0.9em;
     }
 
-    .connexion button,
-    .inscription button {
+    .formulairelog button {
         font-size: 1em;
     }
 }
 
 #backToTop {
-    display: none; /* Caché par défaut */
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -561,10 +549,9 @@ form .radio-group label {
 }
 
 #backToTop:hover {
-    background-color: #f4a261; /* Changer la couleur au survol pour un effet visuel */
-    transform: scale(1.1); /* Agrandir légèrement le bouton au survol */
+    background-color: #f4a261;
+    transform: scale(1.1);
 }
-
 /* Media Queries */
 @media (max-width: 1024px) {
     header img {
@@ -649,7 +636,7 @@ nav ul.show {
     }
 
     nav ul li a {
-        font-family: "Crushed", sans-serif;
+        /* font-family: "Crushed", sans-serif; */
         font-size: 2em;
         color: #fff;
         text-decoration: none;
@@ -687,7 +674,7 @@ nav ul.show {
     }
 
     nav ul li a {
-        font-family: "Crushed", sans-serif;
+        /* font-family: "Crushed", sans-serif; */
         font-size: 2em;
         color: #fff;
         text-decoration: none;
@@ -786,4 +773,11 @@ nav ul.show {
 .connexion.hidden,
 .deconnexion.hidden {
     display: none;
+}
+
+.article-content {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
