@@ -1,0 +1,40 @@
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Utilise toute la hauteur de la vue */
+    width: 100vw; /* Utilise toute la largeur de la vue */
+    max-width: 500px; /* Limite la largeur maximale */
+    max-height: 400px; /* Limite la hauteur maximale */
+    padding: 20px;
+    background-color: #f7f7f7;
+    color: #333;
+    border-radius: 10px; /* Bord arrondi pour un effet visuel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'élément */
+    margin: auto; /* Centre le bloc horizontalement */
+    h1 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        color: #4a4a4a;
+    }
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #555;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1rem; 
+        color: #fff;
+        background-color: #3671b3;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+}
+
+
+
+

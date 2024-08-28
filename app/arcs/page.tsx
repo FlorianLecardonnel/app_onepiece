@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Arc } from "../interfaces/arc";
+import { Arc } from "../../interfaces/arc";
 
 const ArcsPage: React.FC = () => {
     const [arcs, setArcs] = useState<Arc[]>([]);

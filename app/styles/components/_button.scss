@@ -1,0 +1,27 @@
+form button {
+    background-color: #3671b3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0f287d;
+}
+
+// .button-container {
+//     display: flex;
+//     justify-content: center;
+//     margin: 20px;
+// }
+
+// .buttonsubmit {
+//     width: 100%;
+//     max-width: 300px;
+//     padding: 15px 20px;
+//     font-size: 1.1em;
+// }

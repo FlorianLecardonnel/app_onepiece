@@ -1,9 +1,8 @@
-// app/contact/page.tsx
 "use client";
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-const ContactPage: React.FC = () => {
+const ContactForm: React.FC = () => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -14,8 +13,6 @@ const ContactPage: React.FC = () => {
         message: "",
         newsletter: "yes",
     });
-
-    const [statusMessage, setStatusMessage] = useState(""); // État pour le message de statut
 
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -38,32 +35,16 @@ const ContactPage: React.FC = () => {
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
-
             if (response.ok) {
-                setStatusMessage("Message envoyé avec succès");
-                setFormData({
-                    firstName: "",
-                    lastName: "",
-                    email: "",
-                    phone: "",
-                    address: "",
-                    subject: "",
-                    message: "",
-                    newsletter: "yes",
-                });
+                console.log("Form submitted successfully");
+                // Reset form or show success message
             } else {
-                setStatusMessage(
-                    `Erreur lors de l'envoi du message: ${data.message}`
-                );
+                console.error("Form submission failed");
+                // Show error message
             }
         } catch (error) {
-            console.error("Erreur:", error);
-            setStatusMessage(
-                `Erreur lors de l'envoi du message: ${
-                    error instanceof Error ? error.message : String(error)
-                }`
-            );
+            console.error("Error submitting form:", error);
+            // Show error message
         }
     };
 
@@ -124,7 +105,7 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                     />
 
-                    <label htmlFor="subject">Objet*:</label>
+                    <label htmlFor="subject">Object*:</label>
                     <input
                         type="text"
                         id="subject"
@@ -145,7 +126,9 @@ const ContactPage: React.FC = () => {
                         required
                     ></textarea>
 
-                    <label>Recevoir la newsletter par mail:</label>
+                    <label htmlFor="newsletter">
+                        Recevoir la newsletter par mail:
+                    </label>
                     <div className="radio-group">
                         <input
                             type="radio"
@@ -154,8 +137,9 @@ const ContactPage: React.FC = () => {
                             value="yes"
                             checked={formData.newsletter === "yes"}
                             onChange={handleChange}
+                            required
                         />
-                        <label htmlFor="newsletterYes">Oui</label>
+                        Oui
                         <input
                             type="radio"
                             id="newsletterNo"
@@ -163,32 +147,19 @@ const ContactPage: React.FC = () => {
                             value="no"
                             checked={formData.newsletter === "no"}
                             onChange={handleChange}
+                            required
                         />
-                        <label htmlFor="newsletterNo">Non</label>
+                        Non
                     </div>
-
                     <div className="button-container">
                         <button className="buttonsubmit" type="submit">
                             Envoyer
                         </button>
                     </div>
-
-                    {statusMessage && (
-                        <p
-                            style={{
-                                marginTop: "10px",
-                                color: statusMessage.includes("Erreur")
-                                    ? "red"
-                                    : "green",
-                            }}
-                        >
-                            {statusMessage}
-                        </p>
-                    )}
                 </form>
             </section>
         </main>
     );
 };
 
-export default ContactPage;
+export default ContactForm;

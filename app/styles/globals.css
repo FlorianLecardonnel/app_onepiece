@@ -1,789 +1,327 @@
-@tailwind base;
+@charset "UTF-8";
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
-body {
-    font-family: "Crushed", sans-serif; /* Assurez-vous que le nom correspond à la police importée */
+@tailwind utilities; */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Kulim Park", sans-serif; /* Assurez-vous que le nom correspond à la police importée */
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 body {
-    font-family: "Kulim Park", sans-serif;
-    line-height: 1.6;
-    background: #f2f2f2 url("/images/mer1.jpeg") center center / cover no-repeat
-        fixed;
-    margin: 0;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 header {
-    background-color: #3671b3;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  background-color: #3671b3;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
 header img {
-    max-width: 120px;
-    height: auto;
+  max-width: 120px;
+  height: auto;
 }
-
 header h1 {
-    font-family: "Crushed", sans-serif;
-    font-size: 2.5em;
-    text-align: center;
-    flex-grow: 1;
+  font-size: 2.5em;
+  text-align: center;
+  flex-grow: 1;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
-
 nav ul li {
-    margin: 5px 10px;
-    font-size: 1.1em;
+  margin: 5px 10px;
+  font-size: 1.1em;
 }
-
 nav ul li a {
-    font-family: "Crushed", sans-serif;
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 1.1em;
 }
-
 nav ul li a:hover,
 nav ul li a:focus {
-    background-color: #0f287d;
-    border-radius: 5px;
+  background-color: #0f287d;
+  border-radius: 5px;
 }
 
 .burger-menu {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
-
-main {
-    padding: 20px;
-}
-
-main.container {
-    padding-top: 50px;
-    padding-left: 70px;
-    padding-right: 70px;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
 }
 
 footer {
-    font-size: 1.1em;
-    font-family: "Kulim Park", sans-serif;
-    background-color: #3671b3;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    bottom: 0;
-    width: 100%;
+  font-size: 1.1em;
+  background-color: #3671b3;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  bottom: 0;
+  width: 100%;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: #ffdd00;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #f4a261;
+  transform: scale(1.2);
 }
 
 .section {
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.section h1,
 .section h2 {
-    font-family: "Crushed", sans-serif;
-}
-
-.section h1 {
-    font-size: 2.5em;
-    text-align: center;
-}
-
-.section h2 {
-    margin-bottom: 10px;
-    font-size: 2em;
+  margin-bottom: 10px;
+  font-size: 2em;
 }
 
 .section p,
 .section ul li {
-    font-family: "Kulim Park", sans-serif;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.section ul li strong,
-.date {
-    font-style: italic;
-}
-
-.section img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.paragraphe {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-    max-width: 100%;
-}
-
-.container h2 {
-    text-align: center;
-    font-size: 2.2em;
-    margin: 10px;
-}
-
-.paragrapheunivers {
-    margin: 40px;
-}
-
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
+  font-size: 1.1em;
+  color: #333;
 }
 
 #characters-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    justify-content: center;
-    padding: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  padding: 0 10px;
 }
 
-.character,
-.arc {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.character {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
-.character img,
-.arc img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
+.character img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
 }
-
-.character h2,
-.arc h2 {
-    font-family: "Crushed", sans-serif;
-    font-size: 1.5em;
-    margin: 10px 0;
+.character h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
 }
-
-.character p,
-.arc p {
-    font-family: "Kulim Park", sans-serif;
-    font-size: 1.1em;
-    color: #555;
-    margin: 10px 0;
+.character p {
+  font-size: 1.1em;
+  color: #555;
+  margin: 10px 0;
 }
 
 #pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
-
 #pagination button {
-    background-color: #0070f3;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
-
 #pagination button:disabled {
-    background-color: #e0e0e0;
-    color: #b0b0b0;
-    cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: #b0b0b0;
+  cursor: not-allowed;
 }
-
 #pagination button:hover:not(:disabled) {
-    background-color: #005bb5;
+  background-color: #005bb5;
 }
 
-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
+.arc {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.arc h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+.arc p {
+  font-size: 1.1em;
+  color: #555;
+  margin: 10px 0;
 }
 
-form label {
+body {
+  font-family: "Kulim Park", sans-serif;
+  line-height: 1.6;
+  background: #f2f2f2 url("/images/mer1.jpeg") center center/cover no-repeat fixed;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Crushed", serif;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+main .container {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.paragraphe {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  text-align: center;
+  max-width: 100%;
+}
+.container h1 {
+  font-size: 2.4em;
+}
+.container h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin: 10px;
+}
+
+.section img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Affichage du menu pour les écrans à partir de 800px et en*/
+/* Affichage du menu pour les écrans à partir de 800px et en dessous*/
+@media (max-width: 800px) {
+  .burger-menu {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1.1em;
-    color: #333;
-    background-color: #ffffff;
-}
-
-form textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-form input[type="radio"] {
-    margin-right: 10px;
-}
-
-form button {
-    background-color: #3671b3;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0f287d;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-}
-
-.buttonsubmit {
-    width: 100%;
-    max-width: 300px;
-    padding: 15px 20px;
-    font-size: 1.1em;
-}
-
-form .radio-group {
-    display: flex;
-    align-items: center;
-}
-
-form .radio-group label {
-    margin-right: 20px;
-    font-weight: normal;
-}
-
-.article {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.article h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-    color: #3671b3;
-}
-
-.article p:first-of-type {
-    font-style: italic;
-    color: #555;
-}
-
-.article p {
-    font-family: "Kulim Park", sans-serif;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.blog {
-    width: 100%;
-}
-
-.show {
-    background-color: #115098;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin: 20px;
-}
-
-.card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #fff;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 15px;
-}
-
-.card h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-}
-
-.card p {
-    margin: 0;
-    color: #555;
-    font-size: 1em;
-}
-
-#contact {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#contact h2 {
-    font-size: 2.2em;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#contact form input,
-#contact form textarea {
-    padding: 10px;
-    font-size: 1.1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#contact form button {
-    padding: 10px 20px;
-    font-size: 1.1em;
-    background-color: #3671b3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#contact form button:hover {
-    background-color: #0f287d;
-}
-
-.radio-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.radio-group input[type="radio"] {
-    margin-right: 5px;
-}
-
-.button-container {
-    text-align: center;
-}
-
-.buttonsubmit {
-    background-color: #3671b3;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-.buttonsubmit:hover {
-    background-color: #0f287d;
-}
-
-/* Styles pour les formulaires de connexion et d'inscription */
-.connexion,
-.inscription {
-    background-color: #f9f9f9; /* Couleur de fond claire pour les sections */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.connexion form,
-.inscription form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.connexion input,
-.inscription input {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #333;
-    background-color: #ffffff;
-}
-
-.connexion button,
-.inscription button {
-    background-color: #3671b3;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-}
-
-.connexion button:hover,
-.inscription button:hover {
-    background-color: #0f287d;
-}
-
-.connexion,
-.inscription h2 {
-    font-size: 1.8em;
-}
-/* Ajustement pour les champs de formulaire en version mobile */
-@media (max-width: 768px) {
-    .connexion,
-    .inscription {
-        padding: 20px;
-    }
-
-    .connexion input,
-    .inscription input {
-        font-size: 0.9em;
-    }
-
-    .connexion button,
-    .inscription button {
-        font-size: 1em;
-    }
-}
-
-#backToTop {
-    display: none; /* Caché par défaut */
+  }
+  nav ul {
+    display: none;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    font-size: 25px;
-    border: none;
-    outline: none;
-    background-color: #ffdd00;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#backToTop:hover {
-    background-color: #f4a261; /* Changer la couleur au survol pour un effet visuel */
-    transform: scale(1.1); /* Agrandir légèrement le bouton au survol */
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    header img {
-        max-width: 100px;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 10px 10px;
-    }
-}
-
-/* Styles de base pour cacher le menu */
-nav ul {
-    display: none;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3671b3;
+    opacity: 0.95;
     flex-direction: column;
-    list-style: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
     padding: 0;
-}
-
-nav ul.show {
+  }
+  nav ul.show {
     display: flex;
-}
-
-/* Styles pour le menu hamburger */
-.burger-menu {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+  }
+  nav ul li {
+    margin: 20px 0;
+  }
+  nav ul li a {
+    font-size: 2em;
     color: #fff;
-}
-
-/* Affichage du menu sur les grands écrans */
-@media (min-width: 800px) {
-    .burger-menu {
-        display: none; /* Cacher le bouton hamburger sur grands écrans */
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-/* Affichage du menu pour les écrans entre 640px et 800px */
-@media (max-width: 800px) and (min-width: 641px) {
-    .burger-menu {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #3671b3;
-        opacity: 0.95;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        padding: 0;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 20px 0;
-    }
-
-    nav ul li a {
-        font-family: "Crushed", sans-serif;
-        font-size: 2em;
-        color: #fff;
-        text-decoration: none;
-    }
-}
-
-/* Affichage du menu pour les écrans en dessous de 640px */
-@media (max-width: 640px) {
-    .burger-menu {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #3671b3;
-        opacity: 0.95;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-        padding: 0;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 20px 0;
-    }
-
-    nav ul li a {
-        font-family: "Crushed", sans-serif;
-        font-size: 2em;
-        color: #fff;
-        text-decoration: none;
-    }
-}
-
-/* Ajustement pour les champs de formulaire en version mobile */
-
-#contact {
-    padding: 20px;
-}
-
-#contact h2 {
-    font-size: 1.5em;
-}
-
-#contact input,
-#contact textarea {
-    font-size: 0.9em;
-}
-
-.buttonsubmit {
-    font-size: 1em;
-}
-
-@media (max-width: 480px) {
-    main.container {
-        padding-top: 30px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    header img {
-        max-width: 60px;
-    }
-
-    header h1 {
-        font-size: 1.4em;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    h1 {
-        font-size: 1.4em;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-
-    main {
-        padding: 10px;
-    }
-
-    section img {
-        max-width: 100%;
-    }
-
-    .section,
-    .paragraphe,
-    .paragrapheunivers {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 300px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    header img {
-        max-width: 50px;
-    }
-
-    header h1 {
-        font-size: 1.2em;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    footer {
-        position: static;
-    }
-}
-
-.connexion.hidden,
-.deconnexion.hidden {
-    display: none;
-}
+    text-decoration: none;
+  }
+}/*# sourceMappingURL=globals.css.map */

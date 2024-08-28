@@ -1,0 +1,34 @@
+.section {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    h2 {
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+}
+
+// .section h1 {
+//     font-size: 2.5em;
+//     text-align: center;
+// }
+
+
+.section p,
+.section ul li {
+    font-size: 1.1em;
+    color: #333;
+}
+
+// .section ul li strong,
+// .date {
+//     font-style: italic;
+// }
+
+// .section img {
+//     max-width: 100%;
+//     border-radius: 10px;
+//     margin-bottom: 10px;
+// }
