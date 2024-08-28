@@ -18,21 +18,15 @@
         "jsonwebtoken": "^9.0.2",
         "next": "^14.2.5",
         "next-auth": "^4.24.7",
-<<<<<<< HEAD
         "nodemailer": "^6.9.14",
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
         "pg": "^8.12.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.25.1",
-<<<<<<< HEAD
         "sharp": "^0.33.4",
         "swr": "^2.2.5"
-=======
-        "sharp": "^0.33.4"
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
     },
+    
     "devDependencies": {
         "@types/bcrypt": "^5.0.2",
         "@types/jsonwebtoken": "^9.0.6",
