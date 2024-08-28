@@ -9,6 +9,7 @@ datasource db {
 }
 // prisma/schema.prisma
 
+<<<<<<< HEAD
 model Contact {
   id         Int      @id @default(autoincrement())
   firstName  String
@@ -22,6 +23,8 @@ model Contact {
   createdAt  DateTime @default(now())
 }
 
+=======
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
 model User {
   id            Int       @id @default(autoincrement())
   firstName     String?  
@@ -47,6 +50,7 @@ model Article {
 }
 
 model Comment {
+<<<<<<< HEAD
   id             Int       @id @default(autoincrement())
   content        String?
   createdAt      DateTime? @default(now())
@@ -54,6 +58,15 @@ model Comment {
   articleId      Int?
   author         User?     @relation(fields: [authorId], references: [id])
   authorId       Int?
+=======
+  id             Int      @id @default(autoincrement())
+  content        String
+  createdAt      DateTime @default(now())
+  article        Article  @relation(fields: [articleId], references: [id])
+  articleId      Int
+  author         User     @relation(fields: [authorId], references: [id])
+  authorId       Int
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
   authorUsername String?
 }
 

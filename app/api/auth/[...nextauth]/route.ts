@@ -4,9 +4,15 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
+<<<<<<< HEAD
 import type { NextAuthOptions } from "next-auth";
 
 const authOptions: NextAuthOptions = {
+=======
+
+// Assurez-vous que les types et les valeurs sont correctement utilisés
+const authOptions = {
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
     adapter: PrismaAdapter(prisma),
     providers: [
         CredentialsProvider({
@@ -45,6 +51,7 @@ const authOptions: NextAuthOptions = {
         }),
     ],
     session: {
+<<<<<<< HEAD
         strategy: "jwt",
     },
     callbacks: {
@@ -64,6 +71,9 @@ const authOptions: NextAuthOptions = {
             console.log("Session after modification:", session);
             return session;
         },
+=======
+        strategy: "jwt" as const,
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
     },
     pages: {
         signIn: "/login",
@@ -72,4 +82,8 @@ const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
+<<<<<<< HEAD
 export { handler as GET, handler as POST, authOptions };  // Assurez-vous que `authOptions` est exporté ici
+=======
+export { handler as GET, handler as POST };
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d

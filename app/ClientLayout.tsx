@@ -5,7 +5,12 @@ import { SessionProvider } from "next-auth/react";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+<<<<<<< HEAD
 import "./styles/globals.scss";
+=======
+import "./styles/reset.css";
+import "./styles/globals.css";
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
 import { Crushed, Kulim_Park } from "next/font/google";
 
 const crushed = Crushed({
@@ -25,6 +30,7 @@ interface IClientLayout {
 const ClientLayout: React.FC<IClientLayout> = ({ children }) => {
     return (
         <SessionProvider>
+<<<<<<< HEAD
             <Navbar />
             {/* <div className={`${kulim_park.className}`}>
                 <main>{children}</main>
@@ -36,6 +42,14 @@ const ClientLayout: React.FC<IClientLayout> = ({ children }) => {
                 <BackToTop />
             </main>
             <Footer />
+=======
+            <div className={`${kulim_park.className}`}>
+                <Navbar />
+                <main>{children}</main>
+                <BackToTop />
+                <Footer />
+            </div>
+>>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
         </SessionProvider>
     );
 };
