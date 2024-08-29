@@ -33,11 +33,7 @@ const SignIn = () => {
                 <label>Email:</label>
                 <input
                     type="email"
-<<<<<<< HEAD
                     placeholder="Email*"
-=======
-                    placeholder="Email"
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -45,11 +41,7 @@ const SignIn = () => {
                 <label>Mot de passe:</label>
                 <input
                     type="password"
-<<<<<<< HEAD
                     placeholder="Mot de passe*"
-=======
-                    placeholder="Mot de passe"
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required

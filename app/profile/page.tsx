@@ -18,11 +18,7 @@ export default function Profile() {
     }
 
     return (
-<<<<<<< HEAD
         <div className="profil">
-=======
-        <div className="formulairelog">
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
             <h1>Profil</h1>
             <p>Bienvenue, {session.user?.name || "User"}!</p>
             <button onClick={() => signOut({ callbackUrl: '/login' })}>

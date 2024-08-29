@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-<<<<<<< HEAD
 
 import path from "path";
 
@@ -7,8 +6,7 @@ const sassOptions = {
     includePaths: [path.join(process.cwd(), "styles")],
 };
 
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
+
 const nextConfig = {
     reactStrictMode: true, // Active le mode strict de React pour le développement
     // Autres options de configuration ici, si nécessaire
@@ -19,7 +17,6 @@ const nextConfig = {
         NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
         JWT_SECRET: process.env.JWT_SECRET,
     },
-<<<<<<< HEAD
     sassOptions,
     // async rewrites() {
     //     return [    
@@ -29,8 +26,7 @@ const nextConfig = {
     //         },
     //     ];
     // },
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
+
 };
 
 export default nextConfig;

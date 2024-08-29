@@ -1,11 +1,6 @@
 // app/page.tsx
 import React from "react";
-<<<<<<< HEAD
 import "./styles/globals.scss";
-=======
-import "./styles/reset.css";
-import "./styles/globals.css";
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
 import Image from "next/image";
 
 const HomePage: React.FC = () => {

@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // app/contact/page.tsx
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
 "use client";
 
 import React, { useState, ChangeEvent, FormEvent } from "react";
@@ -18,11 +15,8 @@ const ContactPage: React.FC = () => {
         newsletter: "yes",
     });
 
-<<<<<<< HEAD
     const [statusMessage, setStatusMessage] = useState(""); // État pour le message de statut
 
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
     const handleChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -33,7 +27,6 @@ const ContactPage: React.FC = () => {
         }));
     };
 
-<<<<<<< HEAD
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -72,22 +65,11 @@ const ContactPage: React.FC = () => {
                 }`
             );
         }
-=======
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        // Vous pouvez envoyer les données du formulaire ici
-        console.log("Form data submitted:", formData);
-        // Remplacez cette partie par une requête axios ou fetch si vous avez un backend
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
     };
 
     return (
         <main className="container">
             <section id="contact">
-<<<<<<< HEAD
-=======
-                <h2>Contactez-nous</h2>
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="firstName">Prénom*:</label>
                     <input
@@ -145,13 +127,8 @@ const ContactPage: React.FC = () => {
                     <label htmlFor="subject">Objet*:</label>
                     <input
                         type="text"
-<<<<<<< HEAD
                         id="subject"
                         name="subject"
-=======
-                        id="object"
-                        name="object"
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                         placeholder="Objet*"
                         value={formData.subject}
                         onChange={handleChange}
@@ -168,13 +145,7 @@ const ContactPage: React.FC = () => {
                         required
                     ></textarea>
 
-<<<<<<< HEAD
                     <label>Recevoir la newsletter par mail:</label>
-=======
-                    <label htmlFor="newsletter">
-                        Recevoir la newsletter par mail:
-                    </label>
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                     <div className="radio-group">
                         <input
                             type="radio"
@@ -183,14 +154,8 @@ const ContactPage: React.FC = () => {
                             value="yes"
                             checked={formData.newsletter === "yes"}
                             onChange={handleChange}
-<<<<<<< HEAD
                         />
                         <label htmlFor="newsletterYes">Oui</label>
-=======
-                            required
-                        />
-                        Oui
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                         <input
                             type="radio"
                             id="newsletterNo"
@@ -198,23 +163,15 @@ const ContactPage: React.FC = () => {
                             value="no"
                             checked={formData.newsletter === "no"}
                             onChange={handleChange}
-<<<<<<< HEAD
                         />
                         <label htmlFor="newsletterNo">Non</label>
                     </div>
 
-=======
-                            required
-                        />
-                        Non
-                    </div>
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                     <div className="button-container">
                         <button className="buttonsubmit" type="submit">
                             Envoyer
                         </button>
                     </div>
-<<<<<<< HEAD
 
                     {statusMessage && (
                         <p
@@ -228,8 +185,6 @@ const ContactPage: React.FC = () => {
                             {statusMessage}
                         </p>
                     )}
-=======
->>>>>>> f1994565b32afe4b3f135725c7e91c004995447d
                 </form>
             </section>
         </main>
