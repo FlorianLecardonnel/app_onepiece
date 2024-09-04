@@ -14,9 +14,6 @@
     border-radius: 50%; /* Rend le bouton circulaire */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, transform 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #backToTop:hover {

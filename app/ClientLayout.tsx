@@ -32,7 +32,7 @@ const ClientLayout: React.FC<IClientLayout> = ({ children }) => {
             <Navbar />
             <main className={`${kulim_park.className}`}>{children}</main>
             {/* voir le overflow hidden */}
-            <BackToTop />
+            {/* <BackToTop /> */}
             <Footer />
         </SessionProvider>
     );
