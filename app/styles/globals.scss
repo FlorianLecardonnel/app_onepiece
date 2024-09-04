@@ -16,6 +16,10 @@
 @import "pages/profil";
 
 /* Styles globaux */
+html {
+    overflow-x: hidden;
+}
+
 html,
 body {
     width: 100vw;
@@ -30,7 +34,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 .paragraphe {
