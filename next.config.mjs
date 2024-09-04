@@ -6,7 +6,6 @@ const sassOptions = {
     includePaths: [path.join(process.cwd(), "styles")],
 };
 
-
 const nextConfig = {
     reactStrictMode: true, // Active le mode strict de React pour le développement
     // Autres options de configuration ici, si nécessaire
@@ -19,14 +18,17 @@ const nextConfig = {
     },
     sassOptions,
     // async rewrites() {
-    //     return [    
+    //     return [
+    //         {
+    //             source: "/api/:path*", // Attrape toutes les autres routes
+    //             destination: "/api/:path*", // Redirige vers le fichier dans /views
+    //         },
     //         {
     //             source: "/:path*", // Attrape toutes les autres routes
     //             destination: "/views/:path*", // Redirige vers le fichier dans /views
     //         },
     //     ];
     // },
-
 };
 
 export default nextConfig;

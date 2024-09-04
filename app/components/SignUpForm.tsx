@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const SignupPage: React.FC = () => {
     const [email, setEmail] = useState("");
@@ -37,9 +38,9 @@ const SignupPage: React.FC = () => {
     };
 
     return (
-        <div>
-            <h1>Inscription</h1>
+        <div className="container__form">
             <form onSubmit={handleSubmit}>
+                <h1>Inscription</h1>
                 <label>
                     Prénom:
                     <input
@@ -87,6 +88,9 @@ const SignupPage: React.FC = () => {
                 </label>
                 <button type="submit">S&apos;inscrire</button>
             </form>
+            <Link href="/auth/signin">
+                Vous avez déjà un compte? Se connecter
+            </Link>
         </div>
     );
 };

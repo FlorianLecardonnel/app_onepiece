@@ -1,0 +1,54 @@
+.loader-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.straw-hat-loader {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: #ff9800; /* Couleur du chapeau de paille */
+    border-radius: 50% 50% 0 0; /* Forme arrondie pour le dessus du chapeau */
+    overflow: visible;
+    animation: rotate 2.5s linear infinite; /* Ajout de l'animation de rotation */
+}
+
+/* Bord du chapeau en disque aplati */
+.straw-hat-loader::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px; /* Largeur plus grande que le chapeau pour le bord */
+    height: 20px; /* Hauteur réduite pour aplatir le disque */
+    background-color: #ff9800; /* Même couleur que le chapeau */
+    border-radius: 50%;
+    z-index: -1; /* Place le bord derrière le haut du chapeau */
+}
+
+/* Ruban rouge */
+.straw-hat-loader::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #ab0d00; /* Couleur rouge pour le ruban */
+    z-index: 1; /* Assure que le ruban est au-dessus du chapeau */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

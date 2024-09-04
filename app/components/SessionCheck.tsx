@@ -2,7 +2,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import useSWR from "swr";
 import { getSession } from "next-auth/react";
 
@@ -11,24 +10,18 @@ const fetcher = async () => {
     return session;
 };
 
-export default function SessionCheck() {
-    const { data: session, error, isLoading } = useSWR("session", fetcher);
-    const router = useRouter();
+interface SessionCheckProps {
+    onSessionChange: (session: any) => void;
+}
+
+export default function SessionCheck({ onSessionChange }: SessionCheckProps) {
+    const { data: session, isLoading } = useSWR("session", fetcher);
 
     useEffect(() => {
-        if (!session && !isLoading) {
-            // Redirection si l'utilisateur n'est pas authentifié et qu'on n'est pas en train de charger
-            router.push("/login");
+        if (!isLoading) {
+            onSessionChange(session); // Notifie le composant parent du changement de session
         }
-    }, [session, isLoading, router]);
+    }, [session, isLoading, onSessionChange]);
 
-    if (isLoading) {
-        return <div>Loading...</div>; // État de chargement
-    }
-
-    if (!session) {
-        return null; // Évite de montrer quoi que ce soit avant la redirection
-    }
-
-    return <div>Welcome, {session?.user?.name || "User"}!</div>;
+    return null; // Aucun rendu nécessaire ici
 }

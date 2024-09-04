@@ -2,20 +2,111 @@
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
+    margin: 50px;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Deux colonnes avec une proportion 1:2 */
+    gap: 20px; /* Espace entre les colonnes */
+    align-items: start; /* Aligne les éléments au début */
+    text-align: left;
+    line-height: 1.6;
+    transition: box-shadow 0.3s, transform 0.3s;
+
+    @include mobile {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+        .description {
+            grid-column: 1; /* Description dans la seule colonne */
+        }
+        .left-column {
+            align-items: stretch; /* Ajuste la colonne gauche pour occuper toute la largeur */
+        }
+    }
+
+    @include tablet {
+        /* Vous pouvez ajouter des styles supplémentaires pour les tablettes ici si nécessaire */
+    }
+
+    @include desktop {
+        /* Styles pour les grands écrans */
+    }
+}
+
+.arc:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.arc .left-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+}
+
+.arc .left-column h2 {
+    font-size: 1.6em;
+    margin-top: 0;
+    text-align: center; /* Centre le titre horizontalement */
+}
+
+.arc .left-column .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Centre les badges horizontalement */
+    margin: 10px 0;
+}
+
+.arc .left-column p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0; /* Ajuste la marge pour une meilleure présentation */
+}
+
+.arc .description {
+    grid-column: 2; /* Description dans la deuxième colonne */
+    align-self: start; /* Aligne la description au début de la colonne */
+}
+
+.saga-filter {
+    margin-bottom: 20px;
+}
+
+.saga-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Centre les badges horizontalement */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    margin-top: 20px;
+    max-width: 93%; /* Ajuste la largeur max pour les grands écrans */
+}
+
+.saga-badge {
+    background-color: #838383;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 200px; /* Largeur minimale pour assurer une taille uniforme */
     text-align: center;
-    h2 {
-        font-size: 1.5em;
-        margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+        background-color: #ff9800;
+        color: #333;
+        font-weight: bold;
     }
-    p {
-        font-size: 1.1em;
-        color: #555;
-        margin: 10px 0;
+
+    &:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.05);
     }
 }

@@ -1,4 +1,5 @@
 // app/components/ArticleCard.tsx
+
 import React from "react";
 import Link from "next/link";
 
@@ -15,10 +16,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
     image,
     introduction,
 }) => {
-    // Fonction pour extraire le premier paragraphe
     const extractFirstParagraph = (content: string) => {
         const match = content.match(/<p>(.*?)<\/p>/);
-        return match ? match[1] : content.substring(0, 100) + "..."; // Si pas de paragraphe, on tronque
+        return match ? match[1] : content.substring(0, 100) + "...";
     };
 
     const firstParagraph = extractFirstParagraph(introduction);
@@ -26,11 +26,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
     return (
         <div className="article-card">
             <img src={image} alt={title} className="article-image" />
-            <h2>{title}</h2>
-            <p>{firstParagraph}</p>
-            <Link href={`/article/${id}`} className="read-more-link">
-                Lire l'article
-            </Link>
+            <div className="article-content">
+                <h2>{title}</h2>
+                <p>{firstParagraph}</p>
+                <Link href={`/article/${id}`} className="read-more-link">
+                    Lire l'article
+                </Link>
+            </div>
         </div>
     );
 };

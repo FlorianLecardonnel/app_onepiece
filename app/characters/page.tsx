@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const CharactersPage: React.FC = () => {
@@ -10,7 +9,7 @@ const CharactersPage: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const [limit] = useState(10); // Nombre d'éléments par page
+    const [limit] = useState(10);
 
     const characterImages: { [key: string]: string } = {
         "Monkey D Luffy": "/images/luffy.jpg",
@@ -58,7 +57,11 @@ const CharactersPage: React.FC = () => {
     };
 
     if (loading) {
-        return <p>Chargement...</p>;
+        return (
+            <div className="loader-container">
+                <div className="straw-hat-loader"></div>
+            </div>
+        );
     }
 
     if (error) {
@@ -66,56 +69,77 @@ const CharactersPage: React.FC = () => {
     }
 
     return (
-        <main className="container">
+        <div className="container">
+            <h1 className="section-title">Personnages</h1>
             <section id="characters">
-                <div id="characters-container">
+                <div
+                    id="characters__container"
+                    className="characters__container"
+                >
                     {characters.length > 0 ? (
                         characters.map((character: any) => (
                             <div className="character" key={character.id}>
-                                <h2>{character.name || "Nom inconnu"}</h2>
-                                <Image
-                                    src={
-                                        characterImages[character.name] ||
-                                        "/images/default.jpg"
-                                    }
-                                    alt={character.name || "Image par défaut"}
-                                    width={300}
-                                    height={200}
-                                />
-                                <p>
-                                    <strong>Métier :</strong>{" "}
-                                    {character.job || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Taille :</strong>{" "}
-                                    {character.size || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Âge :</strong>{" "}
-                                    {character.age || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Prime :</strong>{" "}
-                                    {character.bounty || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Équipage :</strong>{" "}
-                                    {character.crew?.name || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Statut de l&apos;équipage :</strong>{" "}
-                                    {character.crew?.status || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>Nombre de membres :</strong>{" "}
-                                    {character.crew?.number || "Inconnu"}
-                                </p>
-                                <p>
-                                    <strong>
-                                        Prime totale de l&apos;équipage :
-                                    </strong>{" "}
-                                    {character.crew?.total_prime || "Inconnu"}
-                                </p>
+                                <div className="character__image">
+                                    <Image
+                                        src={
+                                            characterImages[character.name] ||
+                                            "/images/one_piece_defaut.jpg" // Image par défaut
+                                        }
+                                        alt={
+                                            character.name || "Image par défaut"
+                                        }
+                                        layout="fill"
+                                        objectFit="cover"
+                                    />
+                                    <h2>{character.name || "Nom inconnu"}</h2>
+                                    <div className="character__overlay">
+                                        <div className="character__description">
+                                            <p>
+                                                <strong>Métier :</strong>{" "}
+                                                {character.job || "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>Taille :</strong>{" "}
+                                                {character.size || "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>Âge :</strong>{" "}
+                                                {character.age || "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>Prime :</strong>{" "}
+                                                {character.bounty || "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>Équipage :</strong>{" "}
+                                                {character.crew?.name ||
+                                                    "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>
+                                                    Statut de l&apos;équipage :
+                                                </strong>{" "}
+                                                {character.crew?.status ||
+                                                    "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>
+                                                    Nombre de membres :
+                                                </strong>{" "}
+                                                {character.crew?.number ||
+                                                    "Inconnu"}
+                                            </p>
+                                            <p>
+                                                <strong>
+                                                    Prime totale de
+                                                    l&apos;équipage :
+                                                </strong>{" "}
+                                                {character.crew?.total_prime ||
+                                                    "Inconnu"}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))
                     ) : (
@@ -140,7 +164,7 @@ const CharactersPage: React.FC = () => {
                     </button>
                 </div>
             </section>
-        </main>
+        </div>
     );
 };
 

@@ -1,51 +1,172 @@
+// app/styles/pages/blog.scss
+
+// Variables
+$primary-color: #3671b3;
+$secondary-color: #0f287d;
+$text-color: #333;
+$background-color: #f5f5f5;
+
+.articles {
+    position: relative;
+    min-height: calc(100vh - 130px - 69px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Article Card Styles
 .article-card {
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 16px;
-    max-width: 300px;
-    text-align: center;
-    flex: 1 0 21%; /* Baseline for cards on larger screens */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .article-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .article-content {
+        padding: 20px;
+
+        h2 {
+            font-size: 1.5em;
+            color: $text-color;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em;
+            color: lighten($text-color, 20%);
+            margin-bottom: 15px;
+            @include line-clamp(5);
+        }
+
+        .read-more-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+    @include desktop {
+        flex-direction: row;
+        align-items: center;
+
+        .article-image {
+            width: 40%;
+            height: 300px;
+        }
+
+        .article-content {
+            width: 60%;
+        }
+    }
 }
 
-.article-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+// Swiper Styles
+.swipper__wrapper {
+    padding: 40px 0;
+    width: calc(100% - 20px);
+
+    .swiper__wrapper__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .mySwiper {
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    // Wrapper for navigation and pagination
+    .swiper-navigation-and-pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: $primary-color;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                font-size: 20px !important;
+            }
+        }
+
+        .custom-pagination {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                background: $background-color;
+                opacity: 0.5;
+
+                &-active {
+                    opacity: 1;
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
 }
 
-.article-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+// Responsive Adjustments
+@include mobile {
+    .article-card {
+        max-width: 100%;
+    }
 
-.article-card h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 16px 0 8px;
-}
+    .swipper__wrapper {
+        padding: 20px 10px;
+    }
 
-.article-card p {
-    font-size: 1rem;
-    color: #666;
-    padding: 0 16px;
-}
+    .swiper-navigation-and-pagination {
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: inline-block;
+            position: static; // Ensure buttons are inline
+        }
 
-.read-more-link {
-    display: inline-block;
-    margin: 16px 0;
-    padding: 8px 16px;
-    background-color: #3671b3;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.read-more-link:hover {
-    background-color: #0f287d;
+        .custom-pagination {
+            flex: 1;
+            text-align: center;
+        }
+    }
 }

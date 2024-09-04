@@ -6,7 +6,7 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import "./styles/globals.scss";
-import { Crushed, Kulim_Park } from "next/font/google";
+import { Crushed, Kulim_Park, Rye } from "next/font/google";
 
 const crushed = Crushed({
     subsets: ["latin"],
@@ -18,6 +18,10 @@ const kulim_park = Kulim_Park({
     weight: ["200", "300", "400", "600", "700"],
 });
 
+const rye = Rye({
+    subsets: ["latin"],
+    weight: ["400"],
+});
 interface IClientLayout {
     children: React.ReactNode;
 }
@@ -28,8 +32,8 @@ const ClientLayout: React.FC<IClientLayout> = ({ children }) => {
             <Navbar />
             <main className={`${kulim_park.className}`}>
                 {children}
-                <BackToTop />
             </main>
+                <BackToTop />
             <Footer />
         </SessionProvider>
     );

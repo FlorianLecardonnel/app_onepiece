@@ -1,3 +1,5 @@
+@import "../base/mixins";
+
 header {
     background-color: #3671b3;
     color: #fff;
@@ -5,18 +7,76 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    position: relative;
+    padding: 10px 0;
+    width: 100%;
+
     img {
-        max-width: 120px;
+        max-width: 100px;
         height: auto;
     }
+
     h1 {
-        font-size: 2.5em;
-        text-align: center;
-        flex-grow: 1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        color: inherit;
+        font-size: 1.4em; // Diminuer la taille de la police
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: flex-start;
+        margin: 15px;
+        flex-shrink: 0; // Empêche le logo de réduire en taille
     }
 }
 
+// Styles pour le contenu du header
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+// Styles pour le site name
+#siteName {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute; // Place le titre au centre
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 40px;
+
+    h1 {
+        font-size: 1.4em;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include mobile {
+            font-size: 1.6em;
+        }
+
+        @include tablet {
+            font-size: 1.8em;
+        }
+
+        @include desktop {
+            font-size: 2em;
+        }
+    }
+}
+
+// Styles pour la navigation
 nav ul {
     list-style-type: none;
     display: flex;
@@ -25,28 +85,139 @@ nav ul {
     flex-direction: row;
     margin: 0;
     padding: 0;
+    margin-right: 20px;
+
     li {
         margin: 5px 10px;
         font-size: 1.1em;
+
         a {
             color: #fff;
             text-decoration: none;
             padding: 5px 10px;
             font-size: 1.1em;
-        }
-        a:hover,
-        a:focus {
-            background-color: #0f287d;
-            border-radius: 5px;
+
+            &:hover,
+            &:focus {
+                background-color: #0f287d;
+                border-radius: 5px;
+            }
         }
     }
 }
 
+// Styles pour le menu burger
 .burger-menu {
-    display: none;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
     color: #fff;
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+
+    @include mobile {
+        display: block;
+    }
+
+    @include tablet {
+        display: block;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+// Styles responsifs pour le menu
+@include mobile {
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #3671b3;
+        opacity: 0.95;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .container {
+        font-size: 0.9em;
+    }
+}
+
+@include tablet {
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #3671b3;
+        opacity: 0.95;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .container {
+        font-size: 0.9em;
+    }
+}
+
+@include tablet {
+    .container {
+        font-size: 1em;
+    }
+}
+
+@include desktop {
+    .container {
+        font-size: 1em;
+    }
 }

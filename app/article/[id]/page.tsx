@@ -110,7 +110,12 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         setShowComments((prevShowComments) => !prevShowComments);
     };
 
-    if (loadingArticle) return <div>Loading article...</div>;
+    if (loadingArticle)
+        return (
+            <div className="loader-container">
+                <div className="straw-hat-loader"></div>
+            </div>
+        );
     if (errorArticle) return <div>Error: {errorArticle}</div>;
     if (!article) return <div>Article not found</div>;
 

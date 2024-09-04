@@ -1,10 +1,27 @@
+@import "../base/mixins";
+
+.container__form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
 form {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
+    
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
     label {
         display: block;
@@ -17,7 +34,9 @@ form {
     input[type="email"],
     input[type="password"],
     textarea {
-        width: calc(100% - 20px);
+        width: calc(
+            100% - 22px
+        ); /* Ajuste légèrement pour le padding et la bordure */
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #ddd;
@@ -30,20 +49,130 @@ form {
 
     input[type="radio"] {
         margin-right: 10px;
-        margin-left: 10px;
     }
 
     .radio-group {
         display: flex;
         align-items: center;
+        margin-bottom: 20px;
+
         label {
             margin-right: 20px;
             font-weight: normal;
         }
     }
 
-    form textarea {
-        height: 100px;
+    textarea {
+        height: 5em; /* Fixe la hauteur à environ 5 lignes */
         resize: vertical;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        background-color: #3671b3;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken(#3671b3, 10%);
+        }
+    }
+
+    .status-message {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1.1em;
+
+        &.success {
+            color: green;
+        }
+
+        &.error {
+            color: red;
+        }
+    }
+}
+
+/* Utilisation des mixins pour les écrans mobiles */
+@include mobile {
+    form {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 1em;
+    }
+
+    textarea {
+        height: 5em; /* Assure que la hauteur est constante */
+        margin: 10px 0; /* Marge tout autour du textarea */
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+
+/* Utilisation des mixins pour les écrans tablettes */
+@include tablet {
+    form {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 1.1em;
+    }
+
+    textarea {
+        height: 5em; /* Assure que la hauteur est constante */
+        margin: 15px 0; /* Marge tout autour du textarea */
+    }
+
+    button {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+}
+
+/* Utilisation des mixins pour les écrans de bureau */
+@include desktop {
+    form {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 1.2em;
+    }
+
+    textarea {
+        height: 5em; /* Assure que la hauteur est constante */
+        margin: 20px 0; /* Marge tout autour du textarea */
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 12px 24px;
     }
 }

@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -31,25 +31,29 @@ const Navbar: React.FC = () => {
 
     return (
         <header className="container">
-            <Link href="/">
-                <div className="logo-container">
-                    <Image
-                        src="/images/logo-onepiece.png"
-                        alt="Logo One Piece"
-                        width={150}
-                        height={50}
-                        priority
-                    />
-                </div>
-            </Link>
-            <h1>The One Piece</h1>
-            <button
-                className="burger-menu"
-                aria-label="Toggle navigation"
-                onClick={handleMenuToggle}
-            >
-                &#9776;
-            </button>
+            <div className="header-content">
+                <Link href="/">
+                    <div className="logo-container">
+                        <Image
+                            src="/images/logo-onepiece.png"
+                            alt="Logo One Piece"
+                            width={80}
+                            height={40}
+                            priority
+                        />
+                    </div>
+                </Link>
+                <Link href="/" id="siteName">
+                    <h1>The One Piece</h1>
+                </Link>
+                <button
+                    className="burger-menu"
+                    aria-label="Toggle navigation"
+                    onClick={handleMenuToggle}
+                >
+                    &#9776;
+                </button>
+            </div>
             <nav>
                 <ul className={isMenuOpen ? "show" : ""}>
                     <li>
@@ -64,7 +68,7 @@ const Navbar: React.FC = () => {
                     </li>
                     <li>
                         <Link href="/arcs" onClick={handleLinkClick}>
-                            Arcs narratifs
+                            Arcs
                         </Link>
                     </li>
                     <li>
@@ -79,6 +83,16 @@ const Navbar: React.FC = () => {
                                     Profil
                                 </Link>
                             </li>
+                            {session.user.role === "admin" && (
+                                <li>
+                                    <Link
+                                        href="/admin"
+                                        onClick={handleLinkClick}
+                                    >
+                                        Admin
+                                    </Link>
+                                </li>
+                            )}
                         </>
                     ) : (
                         <>

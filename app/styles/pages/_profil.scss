@@ -13,6 +13,8 @@
     border-radius: 10px; /* Bord arrondi pour un effet visuel */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'élément */
     margin: auto; /* Centre le bloc horizontalement */
+    padding: auto;
+    margin-top: 20px;
     h1 {
         font-size: 2.4rem;
         margin-bottom: 20px;
@@ -24,8 +26,10 @@
         color: #555;
     }
     button {
+        max-width: 200px;
+        max-height: 80px;
         padding: 10px 20px;
-        font-size: 1rem; 
+        font-size: 1rem;
         color: #fff;
         background-color: #3671b3;
         border: none;
@@ -34,7 +38,3 @@
         transition: background-color 0.3s ease;
     }
 }
-
-
-
-

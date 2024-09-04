@@ -3,37 +3,40 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+    text-overflow: ellipsis; /* Ajoute des points de suspension à la fin du texte tronqué */
 }
 
 //styles pour les commentaires
-
-.comments-section {
-    margin-top: 20px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.comments-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #3671b3; /* Le trait bleu */
-    padding-bottom: 10px;
-    h2 {
-        font-size: 1.5em;
-        margin: 0;
-        flex: 1;
+.comments {
+    &-section {
+        margin: 40px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
     }
-    .arrow {
-        font-size: 1.5em;
-        transition: transform 0.5s;
-    }
-    .arrow.open {
-        transform: rotate(180deg);
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #3671b3; /* Le trait bleu */
+        padding-bottom: 10px;
+        h2 {
+            font-size: 1.5em;
+            margin: 0;
+            flex: 1;
+        }
+        .arrow {
+            font-size: 1.5em;
+            transition: transform 0.5s;
+            &.open {
+                transform: rotate(180deg);
+            }
+        }
     }
 }
 

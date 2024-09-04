@@ -1,10 +1,34 @@
-// app/api/auth/[...nextauth]/route.ts
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
-import type { NextAuthOptions } from "next-auth";
+import type { NextAuthOptions, Session } from "next-auth";
+import type { JWT } from "next-auth/jwt";
+
+// Définir un type pour l'utilisateur avec toutes les propriétés nécessaires
+interface User {
+    id: string;
+    email: string;
+    name: string;
+    firstName: string;
+    lastName: string;
+    role: string;
+}
+
+// Définir un type pour le token avec les propriétés nécessaires
+interface NextAuthToken extends JWT {
+    id: string; // Assurez-vous que `id` est toujours une chaîne de caractères
+    role?: string; // `role` peut être undefined
+}
+
+// Définir un type pour la session avec les propriétés nécessaires
+interface NextAuthSession extends Session {
+    user: User & {
+        id: string;
+        role: string;
+    };
+}
 
 const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
@@ -36,7 +60,8 @@ const authOptions: NextAuthOptions = {
                             name: user.username,
                             firstName: user.firstName,
                             lastName: user.lastName,
-                        };
+                            role: user.role,
+                        } as User;
                     }
                 }
 
@@ -50,18 +75,19 @@ const authOptions: NextAuthOptions = {
     callbacks: {
         async jwt({ token, user }) {
             if (user) {
-                token.id = user.id;
+                token.id = (user as User).id;
+                token.role = (user as User).role;
             }
             return token;
         },
         async session({ session, token }) {
-            if (token && token.sub) {
+            if (token) {
                 session.user = {
                     ...session.user,
-                    id: token.sub,
+                    id: token.id as string, // Assurez-vous que `token.id` est une chaîne
+                    role: token.role || "", // Fournir une chaîne vide par défaut si `role` est `undefined`
                 };
             }
-            console.log("Session after modification:", session);
             return session;
         },
     },
@@ -72,4 +98,4 @@ const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST, authOptions };  // Assurez-vous que `authOptions` est exporté ici
+export { handler as GET, handler as POST, authOptions };

@@ -1,11 +1,11 @@
-// app/components/SignInForm.tsx
 "use client";
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-const SignIn = () => {
+const SignInForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState<string | null>(null);
@@ -27,7 +27,7 @@ const SignIn = () => {
     };
 
     return (
-        <div className="formulairelog">
+        <div className="container__form">
             <form onSubmit={handleSubmit}>
                 <h1>Connexion</h1>
                 <label>Email:</label>
@@ -49,8 +49,11 @@ const SignIn = () => {
                 {error && <p>{error}</p>}
                 <button type="submit">Se connecter</button>
             </form>
+            <Link href="/auth/signup">
+                Vous n&apos;avez pas de compte ? S&apos;inscrire
+            </Link>
         </div>
     );
 };
 
-export default SignIn;
+export default SignInForm;

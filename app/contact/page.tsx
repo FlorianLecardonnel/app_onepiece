@@ -68,9 +68,10 @@ const ContactPage: React.FC = () => {
     };
 
     return (
-        <main className="container">
+        <div>
             <section id="contact">
                 <form onSubmit={handleSubmit}>
+                <h1>Formulaire de contact</h1>
                     <label htmlFor="firstName">Prénom*:</label>
                     <input
                         type="text"
@@ -187,7 +188,7 @@ const ContactPage: React.FC = () => {
                     )}
                 </form>
             </section>
-        </main>
+        </div>
     );
 };
 
