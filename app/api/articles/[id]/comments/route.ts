@@ -1,7 +1,7 @@
 // app/api/articles/[id]/comments/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import authOptions from '@/app/api/auth/[...nextauth]/authOptions';
+import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
 import prisma from "@/app/lib/db";
 
 export async function POST(request: NextRequest) {

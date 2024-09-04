@@ -12,8 +12,18 @@ header {
     width: 100%;
 
     img {
+        margin-left: 20px;
+
         max-width: 100px;
         height: auto;
+
+        @include mobile {
+            max-width: 60px;
+        }
+
+        @include tablet {
+            margin-left: 60px;
+        }
     }
 
     h1 {
@@ -31,7 +41,7 @@ header {
     .logo-container {
         display: flex;
         justify-content: flex-start;
-        margin: 15px;
+        margin: 10px;
         flex-shrink: 0; // Empêche le logo de réduire en taille
     }
 }
@@ -56,6 +66,7 @@ header {
     margin-bottom: 40px;
 
     h1 {
+        padding-left: 10px;
         font-size: 1.4em;
         margin: 0;
         white-space: nowrap;
@@ -85,7 +96,6 @@ nav ul {
     flex-direction: row;
     margin: 0;
     padding: 0;
-    margin-right: 20px;
 
     li {
         margin: 5px 10px;
@@ -116,6 +126,7 @@ nav ul {
     margin-left: auto;
     width: 50px;
     height: 50px;
+    padding-left: 100px;
     margin-left: 30px;
     display: flex;
     align-items: center;
@@ -130,6 +141,7 @@ nav ul {
 
     @include tablet {
         display: block;
+        margin-right: 60px;
     }
 
     @include desktop {

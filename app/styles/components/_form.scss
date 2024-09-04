@@ -15,7 +15,6 @@ form {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 20px auto;
-    
 
     h1 {
         font-size: 1.8em;
@@ -38,6 +37,8 @@ form {
             100% - 22px
         ); /* Ajuste légèrement pour le padding et la bordure */
         padding: 10px;
+        min-height: 80px;
+        max-height: 200px;
         margin-bottom: 20px;
         border: 1px solid #ddd;
         border-radius: 5px;

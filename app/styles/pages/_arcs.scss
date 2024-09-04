@@ -22,14 +22,6 @@
             align-items: stretch; /* Ajuste la colonne gauche pour occuper toute la largeur */
         }
     }
-
-    @include tablet {
-        /* Vous pouvez ajouter des styles supplémentaires pour les tablettes ici si nécessaire */
-    }
-
-    @include desktop {
-        /* Styles pour les grands écrans */
-    }
 }
 
 .arc:hover {
