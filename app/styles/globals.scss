@@ -21,7 +21,6 @@ body {
     width: 100vw;
     height: 100%;
     margin: 0;
-    overflow-x: hidden;
 }
 
 body {
@@ -31,6 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .paragraphe {
@@ -59,9 +59,4 @@ body {
 .section-title {
     position: absolute;
     opacity: 0;
-}
-
-textarea {
-    min-height: 80px;
-    max-height: 200px;
 }

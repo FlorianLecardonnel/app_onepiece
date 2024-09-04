@@ -112,6 +112,14 @@ $background-color: #f5f5f5;
         align-items: center;
         margin-top: 20px;
 
+        .swiper-button-prev {
+            margin-left: 50px;
+        }
+
+        .swiper-button-next {
+            margin-right: 50px;
+        }
+
         .swiper-button-prev,
         .swiper-button-next {
             color: $primary-color;
@@ -164,7 +172,30 @@ $background-color: #f5f5f5;
         .swiper-button-prev,
         .swiper-button-next {
             display: inline-block;
-            position: static; // Ensure buttons are inline
+            position: static;
+        }
+
+        .custom-pagination {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}
+
+@include tablet {
+    .article-card {
+        max-width: 100%;
+    }
+
+    .swipper__wrapper {
+        padding: 20px 10px;
+    }
+
+    .swiper-navigation-and-pagination {
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: inline-block;
+            position: static;
         }
 
         .custom-pagination {
