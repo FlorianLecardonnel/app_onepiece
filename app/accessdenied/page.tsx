@@ -4,7 +4,7 @@ export default function AccessDenied() {
         <div className="container">
             <h1>Accès Refusé</h1>
             <p>
-                Vous n'avez pas les autorisations nécessaires pour accéder à
+                Vous n&#39;avez pas les autorisations nécessaires pour accéder à
                 cette page.
             </p>
         </div>

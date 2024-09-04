@@ -165,7 +165,7 @@ export default function AdminPage() {
                         {message.text}
                     </p>
                 )}
-                <button type="submit">Créer l'article</button>
+                <button type="submit">Créer l&#39;article</button>
             </form>
         </div>
     );

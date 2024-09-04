@@ -30,7 +30,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
                 <h2>{title}</h2>
                 <p>{firstParagraph}</p>
                 <Link href={`/article/${id}`} className="read-more-link">
-                    Lire l'article
+                    Lire l&#39;article
                 </Link>
             </div>
         </div>
