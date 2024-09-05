@@ -36,6 +36,12 @@ $background-color: #f5f5f5;
         border-radius: 10px;
         object-fit: cover;
         object-position: center;
+        @include mobile {
+            max-height: 450px;
+        }
+        @include tablet {
+            height: 450px;
+        }
     }
 
     .article-content {
@@ -185,6 +191,10 @@ $background-color: #f5f5f5;
 @include tablet {
     .article-card {
         max-width: 100%;
+    }
+    .article-image {
+        width: 40%;
+        height: 300px;
     }
 
     .swipper__wrapper {
