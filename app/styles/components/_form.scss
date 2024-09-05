@@ -37,8 +37,6 @@ form {
             100% - 22px
         ); /* Ajuste légèrement pour le padding et la bordure */
         padding: 10px;
-        min-height: 80px;
-        max-height: 200px;
         margin-bottom: 20px;
         border: 1px solid #ddd;
         border-radius: 5px;
@@ -66,6 +64,8 @@ form {
     textarea {
         height: 5em; /* Fixe la hauteur à environ 5 lignes */
         resize: vertical;
+        min-height: 80px;
+        max-height: 200px;
     }
 
     .button-container {
@@ -100,6 +100,12 @@ form {
         &.error {
             color: red;
         }
+    }
+}
+
+#contact {
+    @include mobile {
+        margin: 20px;
     }
 }
 
