@@ -15,7 +15,6 @@ export async function GET(request: Request) {
         }
 
         const data = await response.json();
-        console.log("Données API externe:", data); // Vérifiez la structure des données
 
         // Transformation des données
         const transformedData = data.map((character: any) => ({

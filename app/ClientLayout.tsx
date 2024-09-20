@@ -4,7 +4,6 @@ import React from "react";
 import { SessionProvider } from "next-auth/react";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
-import BackToTop from "./components/BackToTop";
 import "./styles/globals.scss";
 import { Crushed, Kulim_Park, Rye } from "next/font/google";
 
@@ -31,8 +30,6 @@ const ClientLayout: React.FC<IClientLayout> = ({ children }) => {
         <SessionProvider>
             <Navbar />
             <main className={`${kulim_park.className}`}>{children}</main>
-            {/* voir le overflow hidden */}
-            {/* <BackToTop /> */}
             <Footer />
         </SessionProvider>
     );
