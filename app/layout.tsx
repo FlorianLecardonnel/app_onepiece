@@ -4,7 +4,8 @@ import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
     title: "The One Piece",
-    description: "The One Piece est une application destinée à partager l'univers du manga One Piece aux plus grands nombres. ",
+    description:
+        "The One Piece est une application destinée à partager l'univers du manga One Piece aussi bien pour ceux qui découvrent le manga que pour les fans de longue date.  ",
 };
 
 interface IRootLayout {

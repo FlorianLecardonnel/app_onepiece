@@ -2,7 +2,7 @@
 "use server";
 
 import { NextResponse } from "next/server";
-import prisma from "@/app/lib/db"; // Assurez-vous que le chemin est correct pour votre instance Prisma
+import prisma from "@/app/lib/db";
 
 // Fonction de récupération d'article par ID
 export async function GET(
