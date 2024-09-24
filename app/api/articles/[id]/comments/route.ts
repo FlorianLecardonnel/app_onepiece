@@ -7,7 +7,6 @@ import prisma from "@/app/lib/db";
 export async function POST(request: NextRequest) {
     const url = new URL(request.url);
     const id = url.pathname.split("/")[3];
-    console.log("id:", id);
 
     if (!id || isNaN(Number(id))) {
         return NextResponse.json(
@@ -20,29 +19,22 @@ export async function POST(request: NextRequest) {
         req: request as any,
         ...authOptions,
     }); // Utilisez `req: request as any` pour contourner le problème de typage
-    console.log("Session:", session);
 
     if (!session || !session.user) {
-        console.log("Unauthorized: Session or user missing");
         return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
 
     const { content, authorUsername } = await request.json();
-    console.log("Request Data:", { content, authorUsername });
+
 
     const authorId = session.user.id ? Number(session.user.id) : undefined;
-    console.log("Author ID:", authorId);
+
     const articleId = Number(id);
 
     // || isNaN(authorId)
 
     if (!content || !authorUsername || isNaN(articleId)) {
-        console.log("Invalid data", {
-            content,
-            authorId,
-            articleId,
-            authorUsername,
-        });
+        
         return NextResponse.json({ error: "Invalid data" }, { status: 400 });
     }
 

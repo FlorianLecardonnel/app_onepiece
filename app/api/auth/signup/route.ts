@@ -1,7 +1,11 @@
 //app/api/auth/signup/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "@/app/lib/db"; // Assurez-vous que ce chemin est correct
+import prisma from "@/app/lib/db";
 import bcrypt from "bcrypt";
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 export async function POST(request: NextRequest) {
     const { email, password, firstName, lastName, username } =
@@ -14,8 +18,25 @@ export async function POST(request: NextRequest) {
         );
     }
 
+    // Validate email format
+    if (!emailRegex.test(email)) {
+        return NextResponse.json(
+            { error: "Invalid email format" },
+            { status: 400 }
+        );
+    }
+
+    // Validate password format
+    if (!passwordRegex.test(password)) {
+        return NextResponse.json(
+            {
+                error: "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+            },
+            { status: 400 }
+        );
+    }
+
     try {
-        // Check if the user already exists
         const existingUser = await prisma.user.findUnique({
             where: { email },
         });
@@ -27,10 +48,8 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create the new user
         const user = await prisma.user.create({
             data: {
                 email,

@@ -32,7 +32,6 @@ export async function postComment(
             }),
         });
         if (!response.ok) {
-            console.log(response);
             throw new Error(`Failed to post comment: ${response.statusText}`);
         }
         return await response.json();

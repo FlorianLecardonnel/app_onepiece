@@ -20,7 +20,6 @@ export async function sendEmail(formData: any) {
             text: formData.message, // Contenu en texte brut
             html: `<p>${formData.message}</p>`, // Contenu HTML
         });
-        console.log("Email envoyé avec succès");
     } catch (error) {
         console.error("Erreur lors de l'envoi de l'email :", error);
         throw new Error("Erreur lors de l'envoi de l'email");

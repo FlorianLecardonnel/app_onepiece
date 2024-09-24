@@ -44,7 +44,6 @@ const CommentForm: React.FC<CommentFormProps> = ({ articleId }) => {
             }
 
             const newComment = await response.json();
-            console.log("Comment added:", newComment);
             setContent(""); // Réinitialiser le formulaire après l'ajout du commentaire
             setError(null); // Réinitialiser l'erreur
             setSuccess("Commentaire ajouté avec succès!");

@@ -86,6 +86,14 @@ const SignupPage: React.FC = () => {
                         required
                     />
                 </label>
+                <ul>
+                    <span>Le mot de passe doit contenir : </span>
+                    <li>Une lettre maj</li>
+                    <li>Au minimum 1 chiffre</li>
+                    <li>Au minimum 8 caractères</li>
+                    <li>Au minimum 1 caractère spécial ( @$!%*?& )</li>
+                </ul>
+                <br />
                 <button type="submit">S&apos;inscrire</button>
             </form>
             <Link href="/auth/signin">

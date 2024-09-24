@@ -11,7 +11,6 @@ export async function GET() {
         }
 
         const data: Arc[] = await response.json();
-        console.log("Données API externe:", data);
 
         return NextResponse.json(data);
     } catch (error) {

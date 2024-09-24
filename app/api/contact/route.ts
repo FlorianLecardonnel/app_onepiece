@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        console.log("Données reçues:", body);
+
         const {
             firstName,
             lastName,
@@ -32,8 +32,6 @@ export async function POST(req: NextRequest) {
             message,
             newsletter,
         } = body;
-
-        console.log(Number(process.env.SMTP_PORT));
 
         const mailOptions = {
             from: process.env.EMAIL_USER,

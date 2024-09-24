@@ -36,14 +36,14 @@ const ContactForm: React.FC = () => {
             });
 
             if (response.ok) {
-                console.log("Form submitted successfully");
+                // console.log("Form submitted successfully");
                 // Reset form or show success message
             } else {
-                console.error("Form submission failed");
+                // console.error("Form submission failed");
                 // Show error message
             }
         } catch (error) {
-            console.error("Error submitting form:", error);
+            // console.error("Error submitting form:", error);
             // Show error message
         }
     };
