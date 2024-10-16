@@ -11,6 +11,8 @@ const SignupPage: React.FC = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
+    const [error, setError] = useState<string | null>(null);
+
     const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -33,7 +35,8 @@ const SignupPage: React.FC = () => {
         if (res.ok) {
             router.push("/auth/signin");
         } else {
-            console.error("Failed to sign up");
+            const errorData = await res.json(); // Supposons que le serveur renvoie des informations sur l'erreur
+            setError(errorData.message || "Échec de l'inscription, données incorrectes"); // Affiche le message d'erreur ou un message par défaut
         }
     };
 
@@ -94,6 +97,7 @@ const SignupPage: React.FC = () => {
                     <li>Au minimum 1 caractère spécial ( @$!%*?& )</li>
                 </ul>
                 <br />
+                {error && <p className="error-message">{error}</p>}
                 <button type="submit">S&apos;inscrire</button>
             </form>
             <Link href="/auth/signin">

@@ -17,18 +17,6 @@ const nextConfig = {
         JWT_SECRET: process.env.JWT_SECRET,
     },
     sassOptions,
-    // async rewrites() {
-    //     return [
-    //         {
-    //             source: "/api/:path*", // Attrape toutes les autres routes
-    //             destination: "/api/:path*", // Redirige vers le fichier dans /views
-    //         },
-    //         {
-    //             source: "/:path*", // Attrape toutes les autres routes
-    //             destination: "/views/:path*", // Redirige vers le fichier dans /views
-    //         },
-    //     ];
-    // },
 };
 
 export default nextConfig;

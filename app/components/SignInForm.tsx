@@ -20,9 +20,13 @@ const SignInForm = () => {
         });
 
         if (result?.error) {
-            setError(result.error);
+            if (result.error === "CredentialsSignin") {
+                setError("Données incorrectes. Veuillez réessayer.");
+            } else {
+                setError("Une erreur est survenue. Veuillez réessayer.");
+            }
         } else {
-            router.push("/articles"); // Changez le chemin si nécessaire
+            router.push("/articles");
         }
     };
 

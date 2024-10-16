@@ -110,7 +110,7 @@ button {
     transition: background-color 0.3s;
 
     /* Uniformise la largeur des boutons */
-    flex: 1 1 150px; /* flex-grow: 1; flex-shrink: 1; flex-basis: 150px; */
+    flex: 1 1 150px;
     max-width: 150px;
 
     &:disabled {

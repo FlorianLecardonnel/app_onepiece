@@ -1,3 +1,5 @@
+//app/api/articles/route.ts
+
 import { NextResponse } from "next/server";
 import prisma from "@/app/lib/db";
 import { writeFile } from "fs/promises";

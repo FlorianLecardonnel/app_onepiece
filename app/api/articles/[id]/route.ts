@@ -33,7 +33,6 @@ export async function GET(
         // Retour des données de l'article
         return NextResponse.json(article);
     } catch (error) {
-        console.error(error); // Ajoutez cette ligne pour aider au débogage
         return NextResponse.json(
             { message: "Error fetching article" },
             { status: 500 }

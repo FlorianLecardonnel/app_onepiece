@@ -17,7 +17,6 @@
     overflow: visible;
     animation: rotate 2.5s linear infinite; /* Ajout de l'animation de rotation */
 }
-
 /* Bord du chapeau en disque aplati */
 .straw-hat-loader::before {
     content: "";
@@ -31,7 +30,6 @@
     border-radius: 50%;
     z-index: -1; /* Place le bord derrière le haut du chapeau */
 }
-
 /* Ruban rouge */
 .straw-hat-loader::after {
     content: "";
@@ -43,7 +41,6 @@
     background-color: #ab0d00; /* Couleur rouge pour le ruban */
     z-index: 1; /* Assure que le ruban est au-dessus du chapeau */
 }
-
 @keyframes rotate {
     0% {
         transform: rotate(0deg);

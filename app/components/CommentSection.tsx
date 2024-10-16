@@ -1,7 +1,7 @@
 // app/components/CommentSection.tsx
 "use client";
 import { useState, useEffect } from "react";
-import { fetchComments, postComment } from "../api/comment"; // Ajustez le chemin si nécessaire
+import { fetchComments, postComment } from "../api/comment";
 
 interface CommentSectionProps {
     articleId: number;
